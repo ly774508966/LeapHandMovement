@@ -69,7 +69,15 @@ namespace WPFSample
             this.displayConnection.Text = frame.IsValid.ToString();
             this.displayFingerNumber.Text = frame.Fingers.Count.ToString();
             this.displayHandNumber.Text = frame.Hands.Count.ToString();
-            this.displayGestureNumber.Text = frame.Gestures().Count.ToString(); 
+            this.displayGestureNumber.Text = frame.Gestures().Count.ToString();
+            HandList hands = frame.Hands;
+
+            Hand firstHand = hands[0];
+            Leap.Vector position = firstHand.PalmPosition;
+            Leap.Vector velocity = firstHand.PalmVelocity;
+            Leap.Vector direction = firstHand.Direction;
+
+            this.displayMisc.Text = direction.ToString();
         }
 
         void MainWindow_Closing(object sender, EventArgs e)

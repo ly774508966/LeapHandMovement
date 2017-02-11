@@ -11,9 +11,10 @@
             <Label x:Name="label" Content="Connection Status" HorizontalAlignment="Left" Margin="10,24,0,0" VerticalAlignment="Top"/>
             <Label x:Name="isOnFrame" Content="isOnFrame" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Width="106"/>
             <TextBox x:Name="displayFrame" HorizontalAlignment="Left" Height="23" Margin="148,55,0,0" TextWrapping="Wrap" Text="notOnFrame" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="displayHandNumber" HorizontalAlignment="Left" Height="23" Margin="36,98,0,0" TextWrapping="Wrap" Text="-1" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="displayFingerNumber" HorizontalAlignment="Left" Height="23" Margin="36,140,0,0" TextWrapping="Wrap" Text="-1" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="displayGestureNumber" HorizontalAlignment="Left" Height="23" Margin="36,184,0,0" TextWrapping="Wrap" Text="-1" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.326,0.587"/>
+            <TextBox x:Name="displayHandNumber" HorizontalAlignment="Left" Height="23" Margin="17,86,0,0" TextWrapping="Wrap" Text="-1" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="displayFingerNumber" HorizontalAlignment="Left" Height="23" Margin="17,114,0,0" TextWrapping="Wrap" Text="-1" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="displayGestureNumber" HorizontalAlignment="Left" Height="23" Margin="17,142,0,0" TextWrapping="Wrap" Text="-1" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.326,0.587"/>
+            <TextBox x:Name="displayMisc" HorizontalAlignment="Left" Height="23" Margin="148,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         </Grid>
         <TextBox x:Name="displayConnection" HorizontalAlignment="Left" Height="23" Margin="267,69,0,0" TextWrapping="Wrap" Text="notConnected" VerticalAlignment="Top" Width="120"/>
 
