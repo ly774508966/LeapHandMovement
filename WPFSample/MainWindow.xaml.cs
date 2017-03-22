@@ -22,6 +22,8 @@ namespace WPFSample
         private Controller controller = new Controller();
         private LeapEventListener listener;
         private Boolean isClosing = false;
+        Leap.Vector previousDirection = null;
+
 
         public MainWindow()
         {
@@ -65,19 +67,55 @@ namespace WPFSample
 
         void newFrameHandler(Leap.Frame frame)
         {
-            this.displayFrame.Text = frame.Id.ToString();
-            this.displayConnection.Text = frame.IsValid.ToString();
-            this.displayFingerNumber.Text = frame.Fingers.Count.ToString();
-            this.displayHandNumber.Text = frame.Hands.Count.ToString();
-            this.displayGestureNumber.Text = frame.Gestures().Count.ToString();
+
             HandList hands = frame.Hands;
 
-            Hand firstHand = hands[0];
-            Leap.Vector position = firstHand.PalmPosition;
-            Leap.Vector velocity = firstHand.PalmVelocity;
-            Leap.Vector direction = firstHand.Direction;
 
-            this.displayMisc.Text = direction.ToString();
+            this.handCountValue.Content = hands.Count;
+            //get the front most hand
+            if (hands.Count>0&&hands[0] != null)
+            {
+                Hand firstHand = hands[0];
+                
+                Leap.Vector direction = firstHand.Direction;
+                Leap.Vector PalmNormal = firstHand.PalmNormal;
+                Leap.Vector center = firstHand.PalmPosition;
+                Leap.Vector moveRate = firstHand.PalmVelocity;
+
+                
+                this.directionValue.Content = direction;
+                this.palmPositionValue.Content = center;
+                this.normalValue.Content = PalmNormal;
+
+                FingerList fingers = firstHand.Fingers;
+                this.fingerCountValue.Content = fingers.Count();
+            }
+            
+            if (hands.Count>1&&hands[1] != null)
+            {
+                Hand secondHand = hands[1];
+                
+                Leap.Vector direction = secondHand.Direction;
+                Leap.Vector PalmNormal = secondHand.PalmNormal;
+                Leap.Vector center = secondHand.PalmPosition;
+                Leap.Vector moveRate = secondHand.PalmVelocity;
+
+                
+                this.secondDirectionValue.Content = direction;
+                this.secondPalmPositionValue.Content = center;
+                this.secondNormalValue.Content = PalmNormal;
+
+                //pass finger number in front hand to label( it is always five, with the new Leap Motion Hand model)
+                FingerList fingers = secondHand.Fingers;
+                this.secondFingerCountValue.Content = fingers.Count();
+            }
+               
+
+            this.idValue.Content = frame.Id.ToString();
+            this.frameRateValue.Content = frame.CurrentFramesPerSecond.ToString();
+            this.isValidValue.Content = frame.IsValid.ToString();
+
+
         }
 
         void MainWindow_Closing(object sender, EventArgs e)

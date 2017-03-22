@@ -5,18 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFSample"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="624.408" Width="897.781">
     <Grid>
-        <Grid HorizontalAlignment="Left" Height="217" Margin="119,41,0,0" VerticalAlignment="Top" Width="278">
-            <Label x:Name="label" Content="Connection Status" HorizontalAlignment="Left" Margin="10,24,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="isOnFrame" Content="isOnFrame" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Width="106"/>
-            <TextBox x:Name="displayFrame" HorizontalAlignment="Left" Height="23" Margin="148,55,0,0" TextWrapping="Wrap" Text="notOnFrame" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="displayHandNumber" HorizontalAlignment="Left" Height="23" Margin="17,86,0,0" TextWrapping="Wrap" Text="-1" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="displayFingerNumber" HorizontalAlignment="Left" Height="23" Margin="17,114,0,0" TextWrapping="Wrap" Text="-1" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="displayGestureNumber" HorizontalAlignment="Left" Height="23" Margin="17,142,0,0" TextWrapping="Wrap" Text="-1" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.326,0.587"/>
-            <TextBox x:Name="displayMisc" HorizontalAlignment="Left" Height="23" Margin="148,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        </Grid>
-        <TextBox x:Name="displayConnection" HorizontalAlignment="Left" Height="23" Margin="267,69,0,0" TextWrapping="Wrap" Text="notConnected" VerticalAlignment="Top" Width="120"/>
-
+        <GroupBox x:Name="frameInformation" Header="Frame Information" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.57,0.327" Height="155" Width="880">
+            <Grid HorizontalAlignment="Left" Height="123" Margin="10,10,0,0" VerticalAlignment="Top" Width="857">
+                <Label x:Name="id" Content="ID" HorizontalAlignment="Left" Margin="22,10,0,0" VerticalAlignment="Top" Height="27" Width="26"/>
+                <Label x:Name="idValue" Content="idValue" HorizontalAlignment="Left" Margin="67,10,0,0" VerticalAlignment="Top" Width="780"/>
+                <Label x:Name="frameRate" Content="Frame Rate" HorizontalAlignment="Left" Margin="22,47,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="isValid" Content="isValid" HorizontalAlignment="Left" Margin="22,87,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="frameRateValue" Content="Frame Rate Value" HorizontalAlignment="Left" Margin="109,47,0,0" VerticalAlignment="Top" Width="728"/>
+                <Label x:Name="isValidValue" Content="isValidValue" HorizontalAlignment="Left" Margin="109,91,0,0" VerticalAlignment="Top" Width="738"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="handInformation" Header="Hand Information" HorizontalAlignment="Left" Margin="0,160,0,0" VerticalAlignment="Top" Width="880" Height="247">
+            <Grid HorizontalAlignment="Left" Height="214" Margin="10,10,-2,0" VerticalAlignment="Top" Width="860">
+                <Label x:Name="handCount" Content="Hand Count" HorizontalAlignment="Left" Margin="18,10,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="handCountValue" Content="HandCountVal" HorizontalAlignment="Left" Margin="97,10,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="palmPosition" Content="Palm Position" HorizontalAlignment="Left" Margin="18,41,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="palmPositionValue" Content="Palm Position Value" HorizontalAlignment="Left" Margin="113,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.716,-0.2" Width="216"/>
+                <Label x:Name="direction" Content="Direction" HorizontalAlignment="Left" Margin="334,44,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="directionValue" Content="Direction Value" HorizontalAlignment="Left" Margin="415,44,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.887,-0.362" Width="426"/>
+                <Label x:Name="normal" Content="Normal" HorizontalAlignment="Left" Margin="342,75,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="normalValue" Content="Normal Value" HorizontalAlignment="Left" Margin="415,75,0,0" VerticalAlignment="Top" Width="426"/>
+                <Label x:Name="fingerCount" Content="Finger Count" HorizontalAlignment="Left" Margin="21,75,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="fingerCountValue" Content="Finger Count Value" HorizontalAlignment="Left" Margin="113,72,0,0" VerticalAlignment="Top" Width="133"/>
+                <Label x:Name="secondPalmPosition" Content="2nd Palm Position" HorizontalAlignment="Left" Margin="21,138,0,0" VerticalAlignment="Top" Width="102"/>
+                <Label x:Name="secondPalmPositionValue" Content="2ndPalmPositionValue" HorizontalAlignment="Left" Margin="145,138,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.61,-0.185" Width="184"/>
+                <Label x:Name="secondDirection" Content="2nd Direction" HorizontalAlignment="Left" Margin="342,138,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="secondDirectionValue" Content="2ndDirectionValue" HorizontalAlignment="Left" Margin="445,138,0,0" VerticalAlignment="Top" Width="396"/>
+                <Label x:Name="secondFingerCount" Content="2nd Finger Count" HorizontalAlignment="Left" Margin="21,169,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="secondFingerCountValue" Content="2ndFingerCountValue" HorizontalAlignment="Left" Margin="145,169,0,0" VerticalAlignment="Top" Width="184"/>
+                <Label x:Name="secondNormal" Content="2nd Normal" HorizontalAlignment="Left" Margin="352,169,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="secondNormalValue" Content="2ndNormal Value" HorizontalAlignment="Left" Margin="445,169,0,0" VerticalAlignment="Top" Width="396"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="gestureInformation" Header="Gesture Information" HorizontalAlignment="Left" Margin="0,407,0,0" VerticalAlignment="Top" Width="880" Height="176">
+            <Grid HorizontalAlignment="Left" Height="112" Margin="34,23,0,0" VerticalAlignment="Top" Width="826">
+                <CheckBox x:Name="circleCheckBox" Content="Circle" HorizontalAlignment="Left" Margin="24,10,0,0" VerticalAlignment="Top"/>
+                <CheckBox x:Name="swipeCheckBox" Content="Swipe" HorizontalAlignment="Left" Margin="31,59,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="circleValue" Content="Circle Value" HorizontalAlignment="Left" Margin="124,0,0,0" VerticalAlignment="Top" Width="521"/>
+                <Label x:Name="swipeValue" Content="Swipe Value" HorizontalAlignment="Left" Margin="140,48,0,0" VerticalAlignment="Top" Width="546"/>
+            </Grid>
+        </GroupBox>
     </Grid>
 </Window>
